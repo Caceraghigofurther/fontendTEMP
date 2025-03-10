@@ -1,0 +1,109 @@
+/* adminStyles.css */
+
+/* Container geral */
+.admin-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background: rgba(2, 35, 64, 0.8);
+    border-radius: 15px;
+    box-shadow: 0px 4px 20px rgba(4, 173, 191, 0.5);
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Títulos */
+  .admin-title {
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #F2B705;
+    text-shadow: 0 0 10px #04ADBF;
+  }
+  
+  .admin-subtitle {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #F2B705;
+  }
+  
+  /* Listas de usuários e automações */
+  .admin-user-list,
+  .admin-automation-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .admin-user-item,
+  .admin-automation-item {
+    background: rgba(3, 88, 140, 0.8);
+    padding: 12px 20px;
+    margin: 10px 0;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 0px 10px rgba(4, 173, 191, 0.4);
+  }
+  
+  .admin-user-item:hover,
+  .admin-automation-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 15px rgba(242, 180, 5, 0.6);
+  }
+  
+  /* Botões */
+  .admin-btn, .admin-btn-manage {
+    background: linear-gradient(45deg, #04ADBF, #F24405);
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .admin-btn:hover, .admin-btn-manage:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 4px 15px rgba(4, 173, 191, 0.8);
+  }
+  
+  .admin-btn-remove {
+    background: linear-gradient(45deg, #F24405, #BF0404);
+  }
+  
+  /* Formulários */
+  .admin-form-group {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  
+  .admin-input {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    flex: 1;
+  }
+  
+  /* Mensagens e status */
+  .admin-message {
+    margin-top: 15px;
+    font-size: 16px;
+    text-align: center;
+    color: #F2B705;
+  }
+  
+  .admin-loading,
+  .admin-error,
+  .admin-info {
+    text-align: center;
+    font-size: 18px;
+    margin: 20px 0;
+  }
+  

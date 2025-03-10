@@ -1,0 +1,135 @@
+/* 🔹 Estilos gerais do menu */
+.admin-menu {
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(135deg, #0044cc, #002266);
+    padding: 15px 0;
+    gap: 30px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* 🔹 Estilos dos itens do menu */
+  .menu-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 10px 18px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    font-size: 14px;
+    transition: all 0.3s ease-in-out;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+  }
+  
+  /* 🔹 Ícones do menu */
+  .menu-icon {
+    font-size: 16px;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  /* 🔹 Efeito ao passar o mouse */
+  .menu-item:hover {
+    background: rgba(255, 255, 255, 0.3);
+    color: #fff;
+    transform: translateY(-2px);
+  }
+  
+  .menu-item:hover .menu-icon {
+    transform: scale(1.1);
+  }
+  
+  /* 🔹 Animação de clique */
+  .menu-item:active {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  
+  /* 🔹 Responsividade */
+  @media (max-width: 768px) {
+    .admin-menu {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .menu-item {
+      width: 80%;
+      text-align: center;
+    }
+  }
+  
+
+  .admin-menu {
+    display: flex;
+    align-items: center;
+    height: 60px; /* Mantém o tamanho do menu */
+    background-color: #333;
+    color: #fff;
+    padding: 0 20px;
+  }
+  
+  .logo-container {
+    margin-right: 20px;
+  }
+  
+  .logo {
+    height: 40px; /* Ajusta a altura para se manter dentro do menu (60px) */
+    width: auto;
+  }
+  
+  .menu-items {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .menu-items li {
+    margin-right: 20px;
+  }
+  
+  .menu-items li a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+
+  .admin-menu {
+    display: flex;
+    align-items: center;
+    height: 60px; /* Mantém o tamanho do menu */
+    background-color: #333;
+    color: #fff;
+    padding: 0 0;
+  }
+  
+  /* Container para o logo */
+  .logo-container {
+    margin-right: 0px;
+    padding-right: 300px;
+  }
+  
+  /* Estilo da imagem do logo */
+  .logo {
+    height: 40px; /* Ajuste para caber na barra de 60px */
+    width: auto;
+  }
+  
+  /* Estilos para os itens do menu */
+  .menu-item {
+    display: flex;
+    align-items: center;
+    margin-right: 5px;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .menu-icon {
+    margin-right: 5px;
+  }
+  
+  .agua{
+    display: flex;
+  }

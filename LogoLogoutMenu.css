@@ -1,0 +1,52 @@
+/* Estilos para o componente LogoLogoutMenu */
+.logo-logout-menu {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #0078d4; /* Cor de fundo do menu */
+  }
+  
+  .logo-containerr {
+    flex-grow: 1; /* Faz com que o logo ocupe o máximo de espaço possível à esquerda */
+  }
+
+  .logo-container {
+    flex-grow: -1; /* Faz com que o logo ocupe o máximo de espaço possível à esquerda */
+  }
+  
+  .logo {
+    height: 40px; /* Ajuste a altura conforme necessário */
+  }
+  
+  .logout-btnn {
+    background-color: #dc3545;
+    border: none;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 3px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+
+  .logout-btn {
+    background-color: #dc3545;
+    border: none;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 3px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .logout-btn:hover {
+    background-color: #c82333;
+    transform: scale(1.05);
+  }
+  .logout-btnn:hover {
+    background-color: #c82333;
+    transform: scale(1.05);
+  }
+  
+  

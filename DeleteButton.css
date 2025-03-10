@@ -1,0 +1,90 @@
+/* DeleteButton.css */
+
+/* Botão de exclusão */
+.admin-btn-delete {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  .admin-btn-delete svg.trash-icon {
+    color: #d9534f;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+  }
+  
+  .admin-btn-delete.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  /* Botão de toggle de status */
+  .admin-btn-toggle {
+    padding: 5px 10px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #f0ad4e;
+    color: #fff;
+  }
+  
+  .admin-btn-toggle:hover {
+    opacity: 0.8;
+  }
+  
+  /* Modal de confirmação (se não estiver no outro CSS) */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal {
+    background: #fff;
+    padding: 20px 30px;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+  }
+  
+  .modal h3 {
+    margin-top: 0;
+  }
+  
+  .modal-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .modal-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .modal-btn.confirm {
+    background-color: #d9534f;
+    color: #fff;
+  }
+  
+  .modal-btn.cancel {
+    background-color: #5bc0de;
+    color: #fff;
+  }
+  

@@ -1,0 +1,177 @@
+/* Container principal do painel administrativo */
+.admin-container {
+    width: 80%;
+    max-width: 1600px;
+    margin: 2px auto;
+    padding: 25px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  /* Título do painel */
+  .admin-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #323130;
+    margin-bottom: 20px;
+  }
+  
+  /* Container para as duas colunas */
+  .columns-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+   
+  }
+  
+  /* Coluna esquerda (vertical stack) */
+  .left-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+    max-width: 350px;
+  }
+  
+  /* Coluna direita: contém um wrapper horizontal para os dois cards */
+  .right-column {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Wrapper para os dois cards na coluna direita, lado a lado */
+  .horizontal-wrapper {
+    display: flex;
+    gap: 13px;
+    width: 107%;
+  }
+  
+  /* Metade do espaço na coluna direita */
+  .half-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 380px; /* Altura fixa para padronização */
+    width: 100%;
+  }
+  
+  /* Estilização dos cards individuais */
+  .admin-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    height: 100%;
+    width: 80%;
+  }
+  
+  /* Específico para o card de erros */
+  .admin-card.error-card {
+    /* Pode ajustar a altura se necessário */
+  }
+  
+  /* Wrapper para cada grupo de card e botão */
+  .card-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+  }
+  
+  /* Botões abaixo dos cards */
+  .card-button {
+    margin-top: 27px;
+  }
+  
+  .carde-button {
+    margin-top: 102px;
+  }
+
+  /* Estilo dos botões */
+  .admin-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #0078d4;
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 3px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .admin-btn:hover {
+    background-color: #005a9e;
+    transform: scale(1.05);
+  }
+  
+  /* Container da tabela de erros */
+  .error-table-container {
+    margin-top: 73px;
+    margin-bottom: 50px;
+    padding-top: 0px;
+  }
+  
+  /* Tabela de erros */
+  .admin-table.error-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .admin-table.error-table th,
+  .admin-table.error-table td {
+    padding: 12px 15px;
+    border: 1px solid #f5c2c7;
+    text-align: left;
+    font-size: 0.9rem;
+  }
+  
+  .admin-table.error-table th {
+    background-color: #f2dede;
+    color: #a94442;
+  }
+  
+  .admin-table.error-table tbody tr:nth-child(even) {
+    background-color: #f9e2e2;
+  }
+  
+  .admin-table.error-table tbody tr:hover {
+    background-color: #f7c6c6;
+  }
+  
+  /* Texto abaixo do gráfico de assertividade */
+  .assertividade-text {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  /* Estilo para o texto grande dos cards de quantidade */
+  .text-card {
+    font-size: 3rem;
+    margin: 0;
+  }
+  
+
+
+  .half-carde {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 380px; /* Altura fixa para padronização */
+    width: 100%;
+  }
+  
+  /* Estilização dos cards individuais */
+  .admin-carde {
+    background: #fff;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    height: 100%;
+    width: 80%;
+  }

@@ -1,0 +1,1624 @@
+/* ======================================================================
+   SHAREPOINT OVERRIDE - INSPIRAÇÃO NO SHAREPOINT MODERNO
+   (Este arquivo unifica e sobrepõe os estilos dos arquivos:
+     adminStyle.css, App.css, Automacoes.css, Execucoes.css e styles.css)
+   ====================================================================== */
+
+/* ================================
+   Fontes e Cores Base
+   ================================ */
+   body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f3f2f1; /* Fundo claro típico do SharePoint */
+    color: #323130;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* ======================================================================
+     1. NAVBAR (baseado em styles.css e adaptado)
+     ====================================================================== */
+  .navbar {
+    background-color: #0078d4; /* Azul Microsoft */
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 600;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .navbar-title {
+    font-size: 24px;
+    font-weight: 600;
+    text-shadow: none;
+  }
+  
+  .logout-button {
+    background-color: #005a9e;
+    border: none;
+    color: #ffffff;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+  
+  .logout-button:hover {
+    background-color: #004578;
+    transform: scale(1.05);
+  }
+  
+  /* ======================================================================
+     2. CONTAINER GERAL (baseado em adminStyle.css, App.css e styles.css)
+     ====================================================================== */
+  .container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #ffffff;  /* Fundo branco */
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  /* ======================================================================
+     3. CAIXA DE AUTOMAÇÕES (baseado em adminStyle.css e styles.css)
+     ====================================================================== */
+  .automation-box {
+    background-color: #f3f2f1;  /* Fundo claro */
+    padding: 15px;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  }
+  
+  /* ======================================================================
+     4. LISTA E ITENS DAS AUTOMAÇÕES (baseado em adminStyle.css, Automacoes.css e styles.css)
+     ====================================================================== */
+  .automation-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .automation-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    margin: 10px 0;
+    background-color: #ffffff;
+    border-radius: 4px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  }
+  
+  .automation-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  }
+  
+  .automation-name {
+    font-size: 18px;
+    font-weight: 600;
+    color: #0078d4;
+  }
+  
+  /* ======================================================================
+     5. BOTÃO RODAR (baseado em styles.css e App.css)
+     ====================================================================== */
+  .play-button {
+    background-color: #0078d4;
+    border: none;
+    color: #ffffff;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  }
+  
+  .play-button:hover {
+    background-color: #005a9e;
+    transform: scale(1.05);
+  }
+  
+  .play-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
+  /* ======================================================================
+     6. MENSAGEM DE ACESSO NEGADO (baseado em styles.css)
+     ====================================================================== */
+  .access-denied {
+    color: #d83b01;
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 50px;
+    text-align: center;
+  }
+  
+  /* ======================================================================
+     7. POPUPS / NOTIFICAÇÕES (baseado em styles.css)
+     ====================================================================== */
+  .popup {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px 30px;
+    border-radius: 4px;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    animation: spFadeIn 0.5s ease-in-out, spFadeOut 0.5s ease-in-out 4.5s;
+  }
+  
+  @keyframes spFadeIn {
+    from {
+      opacity: 0;
+      transform: translateX(-50%) translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+  }
+  
+  @keyframes spFadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+  
+  .popup.success {
+    background-color: #28a745;
+    color: #ffffff;
+  }
+  
+  .popup.error {
+    background-color: #dc3545;
+    color: #ffffff;
+  }
+  
+  /* ======================================================================
+     8. ESTILOS ESPECÍFICOS PARA AUTOMOÇÕES (baseado em Automacoes.css)
+     ====================================================================== */
+  .status {
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+    min-width: 120px;
+    text-transform: capitalize;
+  }
+  
+  /* Exemplos de status - você pode ajustar conforme a lógica */
+  .status.finalizada {
+    background-color: #28a745;
+    color: #ffffff;
+  }
+  
+  .status.em-andamento {
+    background-color: #ffc107;
+    color: #000000;
+  }
+  
+  .status.parada {
+    background-color: #dc3545;
+    color: #ffffff;
+  }
+  
+  .status.inativa {
+    background-color: #6c757d;
+    color: #ffffff;
+  }
+  
+  .status.em-manutenção {
+    background-color: #0078d4;
+    color: #ffffff;
+  }
+  
+  /* ======================================================================
+     9. ESTILOS PARA EXECUÇÕES (baseado em Execucoes.css)
+     ====================================================================== */
+  .execucoes-container {
+    width: 95%;
+    max-width: 1300px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    overflow-x: auto;
+    position: relative;
+  }
+  
+  .execucao-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  .execucao-table th,
+  .execucao-table td {
+    border: 1px solid #edebe9;
+    padding: 12px 16px;
+    text-align: left;
+    font-size: 16px;
+  }
+  
+  .execucao-table th {
+    background-color: #f3f2f1;
+    font-weight: 600;
+  }
+  
+  .execucao-table tr:nth-child(even) {
+    background-color: #f9f8f7;
+  }
+  
+  .execucao-table tr:hover {
+    background-color: #e1e1e1;
+    color: #323130;
+  }
+  
+  /* ======================================================================
+     10. ESTILOS PARA LOGIN (baseado em Automacoes.css e styles.css)
+     ====================================================================== */
+  .login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+  }
+  
+  .login-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .login-container input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .login-container button {
+    padding: 10px;
+    background-color: #0078d4;
+    color: #ffffff;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .login-container button:hover {
+    background-color: #005a9e;
+  }
+  
+  /* ======================================================================
+     11. MENU DE NAVEGAÇÃO (baseado em Automacoes.css)
+     ====================================================================== */
+  .menu {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px;
+    background-color: #f3f2f1;
+    border-bottom: 2px solid #0078d4;
+  }
+  
+  .menu a {
+    color: #0078d4;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 3px;
+    transition: color 0.3s;
+  }
+  
+  .menu a:hover {
+    color: #005a9e;
+  }
+  
+
+  /* 💠 Painel Administrativo */
+.admin-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .admin-title {
+    font-size: 26px;
+    font-weight: bold;
+    color: #323130;
+    margin-bottom: 20px;
+  }
+  
+  /* 💠 Lista de Usuários (Estilo Card) */
+  .admin-user-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  
+  /* 💠 Estilo de cada Usuário (Card) */
+  .admin-user-item {
+    background: #f3f2f1;
+    border-radius: 6px;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .admin-user-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* 💠 Nome do Usuário */
+  .admin-user-item span {
+    font-size: 16px;
+    font-weight: 500;
+    color: #0078d4;
+  }
+  
+  /* 💠 Botão de Gerenciamento */
+  .admin-btn-manage {
+    background: #0078d4;
+    border: none;
+    color: white;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+  }
+  
+  .admin-btn-manage:hover {
+    background: #005a9e;
+    transform: scale(1.05);
+  }
+
+
+  /* 💠 Container Geral */
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  /* 💠 Título com Ícone */
+  .title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #323130;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+  }
+  
+  .title::before {
+    content: "🚀"; /* Ícone antes do título */
+    font-size: 24px;
+  }
+  
+  /* 💠 Lista de Automações */
+  .automation-box {
+    background: #f3f2f1;
+    padding: 15px;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* 💠 Estilo dos Itens */
+  .automation-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .automation-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    margin: 10px 0;
+    background: white;
+    border-radius: 6px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .automation-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* 💠 Nome da Automação */
+  .automation-name {
+    font-size: 18px;
+    font-weight: 500;
+    color: #0078d4;
+  }
+  
+  /* 💠 Botão Rodar */
+  .play-button {
+    display: flex;
+    align-items: center;
+    background: #0078d4;
+    border: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s;
+  }
+  
+  .play-button:hover {
+    background: #005a9e;
+    transform: scale(1.05);
+  }
+  
+  .play-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
+  /* Ícone dentro do botão */
+  .play-button::before {
+    content: "▶️";
+    margin-right: 8px;
+    font-size: 16px;
+  }
+  
+  /* 💠 Popup (Mensagens de Erro e Sucesso) */
+  .popup {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px 30px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    animation: fadeIn 0.5s ease-in-out, fadeOut 0.5s ease-in-out 4.5s;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateX(-50%) translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+  }
+  
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+  
+  .popup.success {
+    background: #28a745;
+    color: white;
+  }
+  
+  .popup.error {
+    background: #dc3545;
+    color: white;
+  }
+  
+
+  /* 💠 Container Geral */
+.admin-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 25px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  /* 💠 Título */
+  .admin-title {
+    font-size: 26px;
+    font-weight: bold;
+    color: #323130;
+    margin-bottom: 15px;
+  }
+  
+  /* 💠 Subtítulo */
+  .admin-subtitle {
+    font-size: 20px;
+    font-weight: 600;
+    color: #0078d4;
+    margin-bottom: 10px;
+  }
+  
+  /* 💠 Lista de Automações (Formato de Cards) */
+  .admin-automation-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 0;
+    margin-top: 10px;
+    list-style: none;
+  }
+  
+  /* 💠 Estilo de cada Automação */
+  .admin-automation-item {
+    background: #f3f2f1;
+    border-radius: 6px;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #0078d4;
+    text-align: center;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .admin-automation-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* 💠 Campo de Entrada */
+  .admin-form-group {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 15px;
+  }
+  
+  .admin-input {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    width: 60%;
+  }
+  
+  /* 💠 Botões de Ação */
+  .admin-btn {
+    background: #0078d4;
+    border: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s;
+  }
+  
+  .admin-btn:hover {
+    background: #005a9e;
+    transform: scale(1.05);
+  }
+  
+  .admin-btn-remove {
+    background: #dc3545;
+  }
+  
+  .admin-btn-remove:hover {
+    background: #b02a37;
+  }
+  
+
+  /* 💠 Dropdown (Lista de Automações Disponíveis) */
+.admin-select {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    width: 60%;
+    cursor: pointer;
+    background: #ffffff;
+  }
+  
+  .admin-select:focus {
+    border-color: #0078d4;
+    outline: none;
+  }
+  
+
+  /* 💠 Dropdowns (Atribuir e Remover Automações) */
+.admin-select {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    width: 45%;
+    cursor: pointer;
+    background: #ffffff;
+  }
+  
+  .admin-select:focus {
+    border-color: #0078d4;
+    outline: none;
+  }
+
+
+  /* 💠 Lista de Automações Atribuídas */
+.admin-automation-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 0;
+    margin-top: 10px;
+    list-style: none;
+  }
+  
+  /* 💠 Estilo de cada Automação */
+  .admin-automation-item {
+    position: relative;
+    background: #f3f2f1;
+    border-radius: 6px;
+    padding: 10px 15px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #0078d4;
+    text-align: center;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+    min-height: 25px;
+    min-width: 150px;
+  }
+  
+  .admin-automation-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* 💠 Ícone da Lixeira (Invisível até passar o mouse) */
+  .trash-icon {
+    display: none;
+    position: absolute;
+    top: 55%;
+    right: 5px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #dc3545;
+    font-size: 18px;
+    
+  }
+  
+  .admin-automation-item:hover .trash-icon {
+    display: block;
+    margin-left: 25px;
+  }
+  
+  /* 💠 Popup de Confirmação */
+  .confirmation-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    text-align: center;
+  }
+  
+  .confirmation-popup p {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .confirmation-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .confirm-btn {
+    background: #0078d4;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .cancel-btn {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* 💠 Popup de Sucesso/Erro */
+  .status-popup {
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 15px 20px;
+    border-radius: 6px;
+    font-size: 16px;
+    text-align: center;
+    z-index: 1000;
+    animation: fadeOut 4s forwards;
+  }
+  
+  @keyframes fadeOut {
+    0% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+
+
+  /* Ajuste do layout para grid flexível */
+.admin-user-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Ajusta automaticamente o número de colunas */
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* Estilização dos cards dos usuários */
+.admin-user-card {
+  background: #f5f5f5;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Nome do usuário */
+.admin-user-name {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 8px;
+}
+
+/* Botão de gerenciamento */
+.admin-btn-manage {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.admin-btn-manage:hover {
+  background-color: #0056b3;
+}
+
+/* Botão desativado para Admins */
+.admin-btn-manage.disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+  
+/* Grid de automações */
+.admin-automation-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* Estilização dos cards das automações */
+.admin-automation-card {
+  background: #f5f5f5;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.admin-automation-card h3 {
+  margin-bottom: 10px;
+}
+
+/* Botão para detalhar */
+.admin-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.admin-btn:hover {
+  background-color: #0056b3;
+}
+
+
+.admin-menu {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  background: #03588C;
+  border-bottom: 3px solid #F2B705;
+}
+
+.admin-menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.admin-menu a:hover {
+  background-color: #F2B705;
+  color: black;
+}
+
+
+.admin-user-list {
+  list-style: none;
+  padding: 0;
+}
+
+.admin-user-item {
+  background: #022340;
+  color: white;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.execucao-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.execucao-table th {
+  background-color: #03588C;
+  color: white;
+  padding: 10px;
+  text-align: left;
+  font-weight: bold;
+}
+
+.execucao-table td {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+.status.sucesso {
+  color: #28A745;
+  font-weight: bold;
+}
+
+.status.erro {
+  color: #DC3545;
+  font-weight: bold;
+}
+
+.status.pendente {
+  color: #FFC107;
+  font-weight: bold;
+}
+
+
+/* Ajuste na exibição dos usuários */
+.user-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.user-badge {
+  background-color: #022340;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  display: inline-block;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease-in-out;
+}
+
+.user-badge:hover {
+  transform: scale(1.05);
+  background-color: #03588C;
+}
+
+
+/* Usuários - Cartões individuais */
+.user-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.user-card {
+  background: linear-gradient(135deg, #03588C, #022340);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: capitalize;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease-in-out;
+}
+
+.user-card:hover {
+  transform: scale(1.08);
+  background: linear-gradient(135deg, #022340, #03588C);
+}
+
+/* Paginação */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.pagination button {
+  background: #03588C;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.pagination button:hover {
+  background: #F2B705;
+  color: black;
+}
+
+.pagination button:disabled {
+  background: #6C757D;
+  cursor: not-allowed;
+}
+
+/* Ajuste na tabela */
+.execucao-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.execucao-table th {
+  background-color: #03588C;
+  color: white;
+  padding: 14px;
+  text-align: left;
+  font-size: 1rem;
+  border-bottom: 3px solid #F24405;
+}
+
+.execucao-table td {
+  padding: 12px;
+  font-size: 1rem;
+  border-bottom: 1px solid #F24405;
+}
+
+.execucao-table tr:hover {
+  background-color: #F2B705;
+  color: black;
+}
+
+/* sharepointOverride.css (adicionado) */
+.edit-icon {
+  cursor: pointer;
+  color: #F2B705;
+  margin-left: 8px;
+  transition: 0.3s ease;
+}
+
+.edit-icon:hover {
+  color: #F24405;
+  transform: scale(1.2);
+}
+
+
+/* 🔹 Melhorando a exibição de usuários */
+.admin-user-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px 0;
+}
+
+.user-tag {
+    background-color: #022340;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+}
+
+.user-tag:hover {
+    background-color: #03588C;
+}
+
+/* 🔹 Melhorando a tabela de execuções */
+.execucao-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.execucao-table th {
+    background-color: #022340;
+    color: white;
+    padding: 10px;
+    text-align: left;
+}
+
+.execucao-table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* 🔹 Ajustando a cor dos status */
+.status {
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+}
+
+.status.sucesso {
+    background-color: #28A745;
+    color: white;
+}
+
+.status.erro {
+    background-color: #DC3545;
+    color: white;
+}
+
+/* 🔹 Melhorando o container de informações */
+.admin-info-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 10px;
+}
+
+
+/* 🔹 Usuários organizados e sem espaçamentos excessivos */
+.admin-user-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 5px 0;
+}
+
+.user-badge {
+  background-color: #022340;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.user-badge:hover {
+  background-color: #03588C;
+}
+
+/* 🔹 Melhorando a edição inline */
+.edit-input, .edit-select {
+  font-size: 16px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.edit-icon {
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+/* 🔹 Paginação */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.page-btn {
+  padding: 5px 10px;
+  margin: 2px;
+  border: none;
+  background: #03588C;
+  color: white;
+  cursor: pointer;
+}
+
+.page-btn.active {
+  background: #F2B705;
+  color: black;
+}
+
+
+
+.stats-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.stat-card {
+  width: 30%;
+  min-width: 250px;
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.error-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.error-table th, .error-table td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+.error-table th {
+  background: #f8f9fa;
+}
+
+.error-table tr:hover {
+  background: #f1f1f1;
+}
+
+
+/* Container principal dos cards de métricas */
+.admin-stats-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+/* Estilização dos cards individuais */
+.admin-card {
+  flex: 1 1 30%;
+  min-width: 300px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Ajuste adicional (opcional) */
+.admin-container {
+  padding: 20px;
+}
+
+
+/* Container principal dos cards de métricas */
+.admin-stats-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+/* Estilização dos cards individuais */
+.admin-card {
+  flex: 1 1 30%;
+  min-width: 300px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Container de erros com fundo sutil e borda destacada */
+.admin-errors-container {
+  background: #fff0f0;
+  border: 1px solid #f5c2c7;
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+/* Título da seção de erros */
+.admin-errors-container h3 {
+  margin-bottom: 15px;
+  color: #a94442;
+}
+
+/* Estilização da tabela de erros */
+.admin-table.error-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-table.error-table th,
+.admin-table.error-table td {
+  padding: 12px 15px;
+  border: 1px solid #f5c2c7;
+  text-align: left;
+}
+
+/* Cabeçalho com fundo diferenciado e cor de texto de alerta */
+.admin-table.error-table th {
+  background-color: #f2dede;
+  color: #a94442;
+}
+
+/* Linhas alternadas para melhor legibilidade */
+.admin-table.error-table tbody tr:nth-child(even) {
+  background-color: #f9e2e2;
+}
+
+/* Efeito hover para destacar a linha */
+.admin-table.error-table tbody tr:hover {
+  background-color: #f7c6c6;
+}
+
+/* Container principal do painel */
+.admin-container {
+  padding: 20px;
+}
+
+
+/* Container principal dos cards de métricas da linha superior */
+.admin-stats-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* Container para a linha inferior: Assertividade e Erros lado a lado */
+.admin-bottom-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+/* Garante que ambos os containers tenham largura adequada */
+.admin-bottom-container .admin-card,
+.admin-bottom-container .admin-errors-container {
+  flex: 1 1 45%;
+  min-width: 300px;
+}
+
+/* Estilização dos cards individuais */
+.admin-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Container de erros com fundo sutil e borda destacada */
+.admin-errors-container {
+  background: #fff0f0;
+  border: 1px solid #f5c2c7;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+/* Estilização da tabela de erros */
+.admin-table.error-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-table.error-table th,
+.admin-table.error-table td {
+  padding: 12px 15px;
+  border: 1px solid #f5c2c7;
+  text-align: left;
+}
+
+.admin-table.error-table th {
+  background-color: #f2dede;
+  color: #a94442;
+}
+
+.admin-table.error-table tbody tr:nth-child(even) {
+  background-color: #f9e2e2;
+}
+
+.admin-table.error-table tbody tr:hover {
+  background-color: #f7c6c6;
+}
+
+/* Container principal do painel */
+.admin-container {
+  padding: 20px;
+}
+
+
+/* Container principal dos cards da linha superior */
+.admin-stats-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* Container para a linha inferior: Assertividade e Erros lado a lado */
+.admin-bottom-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+/* Cada item da linha inferior ocupará aproximadamente 48% da largura */
+.admin-bottom-container > div {
+  flex: 0 0 48%;
+}
+
+/* Estilização dos cards individuais */
+.admin-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Container de erros com fundo sutil e borda destacada */
+.admin-errors-container {
+  background: #fff0f0;
+  border: 1px solid #f5c2c7;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+/* Estilização da tabela de erros */
+.admin-table.error-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-table.error-table th,
+.admin-table.error-table td {
+  padding: 12px 15px;
+  border: 1px solid #f5c2c7;
+  text-align: left;
+}
+
+.admin-table.error-table th {
+  background-color: #f2dede;
+  color: #a94442;
+}
+
+.admin-table.error-table tbody tr:nth-child(even) {
+  background-color: #f9e2e2;
+}
+
+.admin-table.error-table tbody tr:hover {
+  background-color: #f7c6c6;
+}
+
+/* Container principal do painel */
+.admin-container {
+  padding: 20px;
+}
+
+/* Container geral */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Lista de automações */
+.automation-list {
+  list-style: none;
+  padding: 0;
+}
+
+.automation-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+/* Botões de ação */
+.play-button, .edit-credentials-button {
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.play-button {
+  background-color: #17a2b8;
+  color: #fff;
+}
+
+.play-button:hover {
+  background-color: #138496;
+}
+
+.edit-credentials-button {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.edit-credentials-button:hover {
+  background-color: #0056b3;
+}
+
+/* Modal de credenciais */
+.credentials-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 350px;
+  max-width: 90%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+.modal-content h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.button-group {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.save-button, .close-button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.save-button {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.close-button {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+/* Popup de mensagens */
+.popup {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 15px 25px;
+  border-radius: 5px;
+  color: #fff;
+  z-index: 1100;
+}
+
+.popup.info {
+  background-color: #17a2b8;
+}
+
+.popup.success {
+  background-color: #28a745;
+}
+
+.popup.error {
+  background-color: #dc3545;
+}

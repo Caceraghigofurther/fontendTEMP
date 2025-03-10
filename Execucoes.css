@@ -1,0 +1,315 @@
+/* Execucoes.css - Estilo atualizado */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+  background-color: #022340;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Container */
+.execucoes-container {
+  width: 95%;
+  max-width: 1300px;
+  background-color: #03588C;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  overflow-x: auto;
+  position: relative;
+}
+
+/* Notificação */
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #04ADBF;
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+  font-weight: bold;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  animation: fadeOut 10s forwards;
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* Filtros */
+.filtro-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px 0;
+}
+
+.filtro-container select {
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Botão de ordenação melhorado */
+.ordenar-button {
+  display: flex;
+  align-items: center;
+  padding: 10px 14px;
+  background-color: #F2B705;
+  color: black;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.ordenar-button:hover {
+  background-color: #F24405;
+  color: white;
+}
+
+.ordenar-button span {
+  margin-left: 8px;
+}
+
+/* Tabela */
+.execucao-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+/* Cabeçalho */
+.execucao-table th {
+  background-color: #04ADBF;
+  color: white;
+  padding: 14px;
+  text-align: left;
+  font-size: 1rem;
+  border-bottom: 3px solid #F24405;
+  cursor: pointer;
+}
+
+/* Coluna de ações */
+.execucao-table th:last-child,
+.execucao-table td:last-child {
+  text-align: center;
+  width: 80px;
+}
+
+/* Linhas alternadas */
+.execucao-table tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.execucao-table tr:hover {
+  background-color: #F2B705;
+  color: black;
+}
+
+/* Células */
+.execucao-table td {
+  padding: 14px;
+  font-size: 1rem;
+  border-bottom: 1px solid #F24405;
+}
+
+/* Ícone da lixeira ajustado */
+.delete-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.delete-button img {
+  width: 24px;
+  height: 24px;
+  opacity: 0.9;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.delete-button img:hover {
+  opacity: 1;
+}
+
+/* Status */
+.status {
+  padding: 6px 12px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-align: center;
+  display: inline-block;
+  min-width: 120px;
+}
+
+/* Cores personalizadas para cada status */
+.success {
+  background-color: #28A745;
+  color: white;
+}
+
+.error {
+  background-color: #DC3545;
+  color: white;
+}
+
+.warning {
+  background-color: #FFC107;
+  color: black;
+}
+
+
+/* Cores para os status */
+.status {
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+    min-width: 120px;
+  }
+  
+  /* Cores corretas aplicadas */
+  .status.sucesso {
+    background-color: #28A745;
+    color: white;
+  }
+  
+  .status.erro {
+    background-color: #DC3545;
+    color: white;
+  }
+  
+  .status.em-andamento {
+    background-color: #FFC107;
+    color: black;
+  }
+
+
+  .menu {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px;
+    background-color: #03588C;
+    border-bottom: 3px solid #F2B705;
+  }
+  
+  .menu a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: 0.3s;
+  }
+  
+  .menu a:hover {
+    background-color: #F2B705;
+    color: black;
+  }
+
+
+  /* Cores para os status das automações */
+.status {
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+    min-width: 120px;
+    text-transform: capitalize;
+  }
+  
+  /* Cores aplicadas aos status */
+  .status.finalizada {
+    background-color: #28A745; /* Verde */
+    color: white;
+  }
+  
+  .status.em-andamento {
+    background-color: #FFC107; /* Amarelo */
+    color: black;
+  }
+  
+  .status.parada {
+    background-color: #DC3545; /* Vermelho */
+    color: white;
+  }
+  
+  .status.inativa {
+    background-color: #6C757D; /* Cinza */
+    color: white;
+  }
+  
+  .status.em-manutenção {
+    background-color: #007BFF; /* Azul */
+    color: white;
+  }
+  
+  .login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+  }
+  
+  .login-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .login-container input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .login-container button {
+    padding: 10px;
+    background-color: #04ADBF;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .login-container button:hover {
+    background-color: #03588C;
+  }
+  
+  /* Estilos para a lista de automações */
+  .automation-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+  }
+  
+  .automation-list li {
+    background-color: #022340;
+    color: white;
+    padding: 12px;
+    margin: 5px 0;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+  
+  
+  
